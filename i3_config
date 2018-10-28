@@ -207,13 +207,13 @@ bar {
 }
 
 
-# pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +8%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -8%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# change volume or toggle mute
+bindsym XF86AudioRaiseVolume exec amixer -q -D default sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D default sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D default sset Master toggle && pkill -RTMIN+10 i3blocks
 
 # lock screeen
-bindsym Mod1+Shift+x exec i3lock
+bindsym Mod1+Shift+x exec i3lock -c "$bg-color
 
 default_border none
 
