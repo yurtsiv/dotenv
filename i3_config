@@ -103,7 +103,7 @@ bindsym Mod1+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod1+minus scratchpad show
 
-set $ws1 ""
+set $ws1 ""
 set $ws2 ""
 set $ws3 ""
 set $ws4 ""
@@ -183,17 +183,17 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+set $bg-color 	         #151b28
+set $bg-accent-color     #2f343f
 set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $inactive-text-color #676e7d
+set $urgent-bg-color     #e53935
 
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.unfocused        $bg-accent-color    $bg-accent-color   $inactive-text-color #00ff00
+client.focused_inactive $bg-accent-color    $bg-accent-color   $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
@@ -203,7 +203,10 @@ bar {
   status_command i3status
   height 25
   colors {
-    background #263238
+    background $bg-color
+    #                  border            background           text
+    focused_workspace  $bg-accent-color  $bg-accent-color     #ffffff
+    inactive_workspace $bg-color         $bg-color            $inactive-text-color
   }
 }
 
@@ -233,5 +236,6 @@ assign [class=$messanger-wm-class] $ws4
 exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
 
 # Keyboard layout settings
-exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:ctrl_shift_toggle 
+exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:alt_shift_toggle 
+
 exec xcompmgr -c -f -n
