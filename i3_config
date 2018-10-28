@@ -104,8 +104,8 @@ bindsym Mod1+Shift+minus move scratchpad
 bindsym Mod1+minus scratchpad show
 
 set $ws1 ""
-set $ws2 ""
-set $ws3 ""
+set $ws2 ""
+set $ws3 ""
 set $ws4 ""
 set $ws5 ""
 set $ws6 "6 "
@@ -138,9 +138,10 @@ bindsym Mod1+Shift+8 move container to workspace $ws8
 bindsym Mod1+Shift+9 move container to workspace $ws9
 bindsym Mod1+Shift+10 move container to workspace $ws10
 
+# assign workspaces to specific screens
 workspace $ws1 output $primary-screen 
-workspace $ws2 output $primary-screen 
-workspace $ws3 output $secondary-screen 
+workspace $ws2 output $secondary-screen 
+workspace $ws3 output $primary-screen 
 workspace $ws4 output $primary-screen 
 workspace $ws5 output $secondary-screen 
 workspace $ws6 output $primary-screen 
@@ -154,8 +155,8 @@ bindsym Mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
+bindsym Mod1+Shift+e exec i3-msg exit
+ 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -169,12 +170,6 @@ mode "resize" {
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -211,32 +206,34 @@ bar {
   }
 }
 
-default_border none
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +8% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -8% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +8%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -8%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# Lock screeen
+# lock screeen
 bindsym Mod1+Shift+x exec i3lock
 
-# Open browser
+default_border none
+
+# open browser
 exec $browser
 assign [class=$browser-wm-class] $ws1
 
-# Open terminal
+# open terminal
 exec $terminal
-assign [class=$terminal-wm-class] $ws3
+assign [class=$terminal-wm-class] $ws2
  
-# Open messanager
+# open messanager
 exec $messanger 
 assign [class=$messanger-wm-class] $ws4
 
-# Set wallpaper
+# set wallpaper
 exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
 
-# Keyboard layout settings
+# keyboard layout settings
 exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:rshift_toggle 
 
+# compositing manager
 exec xcompmgr -c -f -n
