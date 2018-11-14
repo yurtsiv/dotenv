@@ -1,6 +1,6 @@
 [
 	{
-		"keys": ["j", "j"],
+		"keys": ["ctrl+k"],
 		"command": "exit_insert_mode",
 		"context":
 		[
