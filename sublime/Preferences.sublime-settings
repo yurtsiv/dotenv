@@ -1,12 +1,10 @@
 {
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"draw_white_space": "all",
 	"ignored_packages":
 	[
-		"Vintage"
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
-	"theme": "Material-Theme-Darker.sublime-theme",
-	"draw_white_space": "all",
-	"ignored_packages": []
+	"theme": "Material-Theme-Darker.sublime-theme"
 }
