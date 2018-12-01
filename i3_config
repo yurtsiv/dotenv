@@ -40,6 +40,7 @@ set $music-player gpmdp
 set $music-player-wm-class "Google Play Music Desktop Player" 
 set $messanger telegram-desktop
 set $messanger-wm-class "TelegramDesktop"
+set $steam-wm-class "Steam"
 
 # screens
 set $primary-screen "DVI-I-2"
@@ -108,7 +109,7 @@ set $ws2 ""
 set $ws3 ""
 set $ws4 ""
 set $ws5 ""
-set $ws6 "6 "
+set $ws6 ""
 set $ws7 "7 "
 set $ws8 "8 "
 set $ws9 "9 "
@@ -229,6 +230,9 @@ assign [class=$terminal-wm-class] $ws2
 exec $messanger 
 assign [class=$messanger-wm-class] $ws4
 
+# gaming
+assign [class=$steam-wm-class] $ws6
+
 # set wallpaper
 exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
 
@@ -237,3 +241,4 @@ exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:rshift_toggle
 
 # compositing manager
 exec xcompmgr -c -f -n
+
