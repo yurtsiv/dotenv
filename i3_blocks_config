@@ -30,7 +30,7 @@ markup=none
 
 # Key layout
 [key_layout]
-command=xkb-switch -W
+command=bash -c 'xkb-switch;xkb-switch -W'
 label=
 interval=persist
 
