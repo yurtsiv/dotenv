@@ -21,7 +21,7 @@ set wrap                " line wrapping
 set title               " window’s title, reflecting the file currently being edited
 set confirm             " display a confirmation dialog when closing an unsaved file
 set path+=**            " search down into subfolders
- 
+
 :imap <C-k> <Esc>
 map <C-o> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)

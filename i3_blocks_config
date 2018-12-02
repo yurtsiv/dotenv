@@ -30,9 +30,9 @@ markup=none
 
 # Key layout
 [key_layout]
-command=~/.config/i3blocks/key_layout/key_layout
+command=xkb-switch -W
 label=
-interval=30
+interval=persist
 
 # Sound volume
 [volume]
