@@ -214,6 +214,8 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D default sset Master 5%+ && pkill 
 bindsym XF86AudioLowerVolume exec amixer -q -D default sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D default sset Master toggle && pkill -RTMIN+10 i3blocks
 
+# screeshot
+bindsym Control+Print exec gnome-screenshot -i
 
 # lock screeen
 bindsym Mod1+Shift+x exec i3lock -c "$bg-color"
