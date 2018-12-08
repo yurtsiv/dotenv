@@ -41,6 +41,7 @@ set $music-player-wm-class "Google Play Music Desktop Player"
 set $messanger telegram-desktop
 set $messanger-wm-class "TelegramDesktop"
 set $steam-wm-class "Steam"
+set $code-editor-wm-class "Sublime_text"
 
 # screens
 set $primary-screen "DVI-I-2"
@@ -213,6 +214,9 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D default sset Master 5%+ && pkill 
 bindsym XF86AudioLowerVolume exec amixer -q -D default sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D default sset Master toggle && pkill -RTMIN+10 i3blocks
 
+# screeshot
+bindsym Control+Print exec gnome-screenshot -i
+
 # lock screeen
 bindsym Mod1+Shift+x exec i3lock -c "$bg-color"
 
@@ -229,6 +233,9 @@ assign [class=$terminal-wm-class] $ws2
 # open messanager
 exec $messanger 
 assign [class=$messanger-wm-class] $ws4
+
+# code
+assign [class=$code-editor-wm-class] $ws3
 
 # gaming
 assign [class=$steam-wm-class] $ws6
