@@ -42,6 +42,7 @@ set $messanger telegram-desktop
 set $messanger-wm-class "TelegramDesktop"
 set $steam-wm-class "Steam"
 set $code-editor-wm-class "Sublime_text"
+set $video-viewer-wm-class "vlc"
 
 # screens
 set $primary-screen "DVI-I-2"
@@ -111,7 +112,7 @@ set $ws3 ""
 set $ws4 ""
 set $ws5 ""
 set $ws6 ""
-set $ws7 "7 "
+set $ws7 ""
 set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
@@ -147,7 +148,7 @@ workspace $ws3 output $primary-screen
 workspace $ws4 output $primary-screen 
 workspace $ws5 output $secondary-screen 
 workspace $ws6 output $primary-screen 
-workspace $ws6 output $primary-screen 
+workspace $ws7 output $primary-screen 
 workspace $ws8 output $primary-screen 
 workspace $ws9 output $primary-screen 
 workspace $ws10 output $primary-screen 
@@ -239,6 +240,9 @@ assign [class=$code-editor-wm-class] $ws3
 
 # gaming
 assign [class=$steam-wm-class] $ws6
+
+# films
+assign [class=$video-viewer-wm-class] $ws7
 
 # set wallpaper
 exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
