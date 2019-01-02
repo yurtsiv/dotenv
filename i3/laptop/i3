@@ -34,19 +34,10 @@ set $right l
 # default applications
 set $terminal terminator
 set $terminal-wm-class "Terminator"
-set $browser firefox
-set $browser-wm-class "Firefox"
-set $music-player gpmdp
-set $music-player-wm-class "Google Play Music Desktop Player" 
+set $browser google-chrome-stable
+set $browser-wm-class "google-chrome"
 set $messanger telegram-desktop
 set $messanger-wm-class "TelegramDesktop"
-set $steam-wm-class "Steam"
-set $code-editor-wm-class "Sublime_text"
-set $video-viewer-wm-class "vlc"
-
-# screens
-set $primary-screen "DVI-I-2"
-set $secondary-screen "DVI-I-1"
 
 # start a terminal
 bindsym Mod1+Return exec $terminal 
@@ -121,54 +112,6 @@ set $ws10 "10 "
 bindsym Mod1+1 workspace $ws1
 bindsym Mod1+2 workspace $ws2 
 bindsym Mod1+3 workspace $ws3
-bindsym Mod1+4 workspace $ws4
-bindsym Mod1+5 workspace $ws5
-bindsym Mod1+6 workspace $ws6
-bindsym Mod1+7 workspace $ws7
-bindsym Mod1+8 workspace $ws8
-bindsym Mod1+9 workspace $ws9
-bindsym Mod1+10 workspace $ws10
-
-# move focused container to workspace
-bindsym Mod1+Shift+1 move container to workspace $ws1
-bindsym Mod1+Shift+2 move container to workspace $ws2
-bindsym Mod1+Shift+3 move container to workspace $ws3
-bindsym Mod1+Shift+4 move container to workspace $ws4
-bindsym Mod1+Shift+5 move container to workspace $ws5
-bindsym Mod1+Shift+6 move container to workspace $ws6
-bindsym Mod1+Shift+7 move container to workspace $ws7
-bindsym Mod1+Shift+8 move container to workspace $ws8
-bindsym Mod1+Shift+9 move container to workspace $ws9
-bindsym Mod1+Shift+10 move container to workspace $ws10
-
-# assign workspaces to specific screens
-workspace $ws1 output $primary-screen 
-workspace $ws2 output $secondary-screen 
-workspace $ws3 output $primary-screen 
-workspace $ws4 output $primary-screen 
-workspace $ws5 output $secondary-screen 
-workspace $ws6 output $primary-screen 
-workspace $ws7 output $primary-screen 
-workspace $ws8 output $primary-screen 
-workspace $ws9 output $primary-screen 
-workspace $ws10 output $primary-screen 
-
-# reload the configuration file
-bindsym Mod1+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec i3-msg exit
- 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
@@ -209,14 +152,61 @@ bar {
   }
 }
 
-
-# change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D default sset Master 5%+ && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioLowerVolume exec amixer -q -D default sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer -q -D default sset Master toggle && pkill -RTMIN+10 i3blocks
-
 # screeshot
 bindsym Control+Print exec gnome-screenshot -i
+
+# lock screeen
+bindsym Mod1+Shift+x exec i3lock -c "$bg-color"
+
+default_border none
+
+# open browser
+exec $browser
+
+default_border none
+
+# open browser
+exec $browser
+
+default_border none
+
+# open browser
+exec $browser
+assign [class=$browser-wm-class] $ws1
+
+# open terminal
+exec $terminal
+assign [class=$terminal-wm-class] $ws2
+ 
+# open messanager
+exec $messanger 
+assign [class=$messanger-wm-class] $ws4
+
+# code
+assign [class=$code-editor-wm-class] $ws3
+
+# gaming
+assign [class=$steam-wm-class] $ws6
+
+# films
+assign [class=$video-viewer-wm-class] $ws7
+
+# set wallpaper
+exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
+
+default_border none
+
+# open browser
+exec $browser
+assign [class=$browser-wm-class] $ws1
+
+# open terminal
+exec $terminal
+assign [class=$terminal-wm-class] $ws2
+ 
+# open messanager
+exec $messanger 
+assign [class=$messanger-wm-class] $ws4
 
 # lock screeen
 bindsym Mod1+Shift+x exec i3lock -c "$bg-color"
