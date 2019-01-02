@@ -1,0 +1,255 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:DejaVu Sans Mono 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# default applications
+set $terminal terminator
+set $terminal-wm-class "Terminator"
+set $browser firefox
+set $browser-wm-class "Firefox"
+set $music-player gpmdp
+set $music-player-wm-class "Google Play Music Desktop Player" 
+set $messanger telegram-desktop
+set $messanger-wm-class "TelegramDesktop"
+set $steam-wm-class "Steam"
+set $code-editor-wm-class "Sublime_text"
+set $video-viewer-wm-class "vlc"
+
+# screens
+set $primary-screen "DVI-I-2"
+set $secondary-screen "DVI-I-1"
+
+# start a terminal
+bindsym Mod1+Return exec $terminal 
+
+# kill focused window
+bindsym Mod1+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym Mod1+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym Mod1+$left focus left
+bindsym Mod1+$down focus down
+bindsym Mod1+$up focus up
+bindsym Mod1+$right focus right
+
+# move focused window
+bindsym Mod1+Shift+$left move left
+bindsym Mod1+Shift+$down move down
+bindsym Mod1+Shift+$up move up
+bindsym Mod1+Shift+$right move right
+
+# split in horizontal orientation
+bindsym Mod1+g split h
+
+# split in vertical orientation
+bindsym Mod1+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod1+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod1+s layout stacking
+bindsym Mod1+w layout tabbed
+bindsym Mod1+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod1+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod1+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod1+Shift+a focus parent
+
+# focus the child container
+bindsym Mod1+Shift+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym Mod1+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym Mod1+minus scratchpad show
+
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
+set $ws7 ""
+set $ws8 "8 "
+set $ws9 "9 "
+set $ws10 "10 "
+
+# switch to workspace
+bindsym Mod1+1 workspace $ws1
+bindsym Mod1+2 workspace $ws2 
+bindsym Mod1+3 workspace $ws3
+bindsym Mod1+4 workspace $ws4
+bindsym Mod1+5 workspace $ws5
+bindsym Mod1+6 workspace $ws6
+bindsym Mod1+7 workspace $ws7
+bindsym Mod1+8 workspace $ws8
+bindsym Mod1+9 workspace $ws9
+bindsym Mod1+10 workspace $ws10
+
+# move focused container to workspace
+bindsym Mod1+Shift+1 move container to workspace $ws1
+bindsym Mod1+Shift+2 move container to workspace $ws2
+bindsym Mod1+Shift+3 move container to workspace $ws3
+bindsym Mod1+Shift+4 move container to workspace $ws4
+bindsym Mod1+Shift+5 move container to workspace $ws5
+bindsym Mod1+Shift+6 move container to workspace $ws6
+bindsym Mod1+Shift+7 move container to workspace $ws7
+bindsym Mod1+Shift+8 move container to workspace $ws8
+bindsym Mod1+Shift+9 move container to workspace $ws9
+bindsym Mod1+Shift+10 move container to workspace $ws10
+
+# assign workspaces to specific screens
+workspace $ws1 output $primary-screen 
+workspace $ws2 output $secondary-screen 
+workspace $ws3 output $primary-screen 
+workspace $ws4 output $primary-screen 
+workspace $ws5 output $secondary-screen 
+workspace $ws6 output $primary-screen 
+workspace $ws7 output $primary-screen 
+workspace $ws8 output $primary-screen 
+workspace $ws9 output $primary-screen 
+workspace $ws10 output $primary-screen 
+
+# reload the configuration file
+bindsym Mod1+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod1+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod1+Shift+e exec i3-msg exit
+ 
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod1+r mode "resize"
+
+set $bg-color 	         #151b28
+set $bg-accent-color     #2f343f
+set $text-color          #2196f3
+set $inactive-text-color #676e7d
+set $urgent-bg-color     #e53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $bg-accent-color    $bg-accent-color   $inactive-text-color #00ff00
+client.focused_inactive $bg-accent-color    $bg-accent-color   $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  status_command i3blocks
+
+  height 30
+  colors {
+    background $bg-color
+    #                  border            background           text
+    focused_workspace  $bg-accent-color  $bg-accent-color     $text-color
+    inactive_workspace $bg-color         $bg-color            $inactive-text-color
+  }
+}
+
+
+# change volume or toggle mute
+bindsym XF86AudioRaiseVolume exec amixer -q -D default sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D default sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D default sset Master toggle && pkill -RTMIN+10 i3blocks
+
+# screeshot
+bindsym Control+Print exec gnome-screenshot -i
+
+# lock screeen
+bindsym Mod1+Shift+x exec i3lock -c "$bg-color"
+
+default_border none
+
+# open browser
+exec $browser
+assign [class=$browser-wm-class] $ws1
+
+# open terminal
+exec $terminal
+assign [class=$terminal-wm-class] $ws2
+ 
+# open messanager
+exec $messanger 
+assign [class=$messanger-wm-class] $ws4
+
+# code
+assign [class=$code-editor-wm-class] $ws3
+
+# gaming
+assign [class=$steam-wm-class] $ws6
+
+# films
+assign [class=$video-viewer-wm-class] $ws7
+
+# set wallpaper
+exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
+
+# keyboard layout settings
+exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:rshift_toggle 
+
+# compositing manager
+exec xcompmgr -c -f -n
+
