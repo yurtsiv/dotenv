@@ -4,7 +4,9 @@
 	"ignored_packages":
 	[
 	],
+	"tab_size": 2,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"translate_tabs_to_spaces": true,
 	"theme": "Material-Theme-Darker.sublime-theme"
 }

@@ -14,7 +14,7 @@ ln -s ~/dotfiles/vimrc ~/.vim
 rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 
-rm ~/.config/sublime-text-3/Packages/User/*
+rm -rf ~/.config/sublime-text-3/Packages/User/*
 ln -s ~/dotfiles/sublime/'Default (Linux).sublime-keymap' ~/.config/sublime-text-3/Packages/User/'Default (Linux).sublime-keymap'
 ln -s ~/dotfiles/sublime/'Package Control.sublime-settings' ~/.config/sublime-text-3/Packages/User/'Package Control.sublime-settings'
 ln -s ~/dotfiles/sublime/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
