@@ -245,7 +245,7 @@ assign [class=$steam-wm-class] $ws6
 assign [class=$video-viewer-wm-class] $ws7
 
 # set wallpaper
-exec_always feh --bg-scale $HOME/Pictures/wallpapers/default.jpg
+exec_always bash ~/dotfiles/i3/set_wallpaper.sh
 
 # keyboard layout settings
 exec_always setxkbmap -model pc105 -layout us,ua,pl -option grp:rshift_toggle 
