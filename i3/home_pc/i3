@@ -41,7 +41,7 @@ set $music-player-wm-class "Google Play Music Desktop Player"
 set $messanger telegram-desktop
 set $messanger-wm-class "TelegramDesktop"
 set $steam-wm-class "Steam"
-set $code-editor-wm-class "Sublime_text"
+set $code-editor-wm-class "code-oss"
 set $video-viewer-wm-class "vlc"
 
 # screens
