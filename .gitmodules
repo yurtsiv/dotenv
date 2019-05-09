@@ -32,9 +32,6 @@
 [submodule "vimrc/pack/git-plugins/start/Apprentice.git"]
 	path = vimrc/pack/git-plugins/start/Apprentice.git
 	url = https://github.com/romainl/Apprentice.git
-[submodule "vimrc/pack/git-plugins/start/abstract.vim.git"]
-	path = vimrc/pack/git-plugins/start/abstract.vim.git
-	url = https://github.com/jdsimcoe/abstract.vim.git
 [submodule "vimrc/pack/git-plugins/start/material.vim.git"]
 	path = vimrc/pack/git-plugins/start/material.vim.git
 	url = https://github.com/kaicataldo/material.vim.git
