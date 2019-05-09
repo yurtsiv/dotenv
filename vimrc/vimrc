@@ -1,26 +1,99 @@
-set nocompatible        " enter the current millenium
+" set compatibility to Vim only.
+set nocompatible
+
+" turn on syntax highlighting.
 syntax enable
-set termguicolors       " enable true colors support
-let ayucolor="dark"     " for dark version of theme
-colorscheme ayu
-filetype plugin on
-set tabstop=2           " number of visual spaces per TAB
-set softtabstop=2       " number of spaces in tab when editing
-set shiftwidth=2        " number of spaces when shifting
-set expandtab           " tabs are spaces
-set number              " show line numbers
-set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to.
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+
+" enable true colors support
+set termguicolors
+
+" For plug-ins to load correctly.
+filetype plugin indent on
+
+" Turn off modelines
+set modelines=0
+
+" number of visual spaces per TAB
+set tabstop=2
+
+" number of spaces in tab when editing
+set softtabstop=2
+
+" number of spaces when shifting
+set shiftwidth=2
+
+" tabs are spaces
+set expandtab
+
+" show line numbers
+set number              
+
+" visual autocomplete for command menu
+set wildmenu            
+
+" redraw only when we need to.
+set lazyredraw          
+
+" search as characters are entered
+set incsearch           
+
+" highlight matches
+set hlsearch            
+
+" search as characters are entered
+set incsearch           
+
+" highlight matches
+set hlsearch            
+
+" encoding
 set encoding=utf-8
-set linebreak           " avoid wrapping a line in the middle of a word
-set wrap                " line wrapping
-set title               " window’s title, reflecting the file currently being edited
-set confirm             " display a confirmation dialog when closing an unsaved file
-set path+=**            " search down into subfolders
+
+" avoid wrapping a line in the middle of a word
+set linebreak           
+
+" line wrapping
+set wrap                
+
+" window’s title, reflecting the file currently being edited
+set title               
+
+" display a confirmation dialog when closing an unsaved file
+set confirm             
+
+" search down into subfolders
+set path+=**            
+
+" display 5 lines above/below the cursor when scrolling with a mouse.
+set scrolloff=5         
+
+" fixes common backspace problems
+set backspace=indent,eol,start 
+
+" speed up scrolling
+set ttyfast             
+
+" status bar
+set laststatus=2        
+
+" display options
+set showmode
+set showcmd
+
+" display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+
+" set status line display
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+
+
+" Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
+
+colorscheme ayu
 
 :imap <C-k> <Esc>
 map <C-o> :NERDTreeToggle<CR>

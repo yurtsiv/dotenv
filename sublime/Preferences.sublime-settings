@@ -1,12 +1,16 @@
 {
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"draw_white_space": "all",
+	"font_size": 11,
 	"ignored_packages":
 	[
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"material_theme_accent_cyan": true,
+	"material_theme_contrast_mode": true,
 	"tab_size": 2,
 	"theme": "Material-Theme-Darker.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"vintageous_use_ctrl_keys": true,
 }
