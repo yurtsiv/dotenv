@@ -23,55 +23,55 @@ set shiftwidth=2
 set expandtab
 
 " show line numbers
-set number              
+set number
 
 " visual autocomplete for command menu
-set wildmenu            
+set wildmenu
 
 " redraw only when we need to.
-set lazyredraw          
+set lazyredraw
 
 " search as characters are entered
-set incsearch           
+set incsearch
 
 " highlight matches
-set hlsearch            
+set hlsearch
 
 " search as characters are entered
-set incsearch           
+set incsearch
 
 " highlight matches
-set hlsearch            
+set hlsearch
 
 " encoding
 set encoding=utf-8
 
 " avoid wrapping a line in the middle of a word
-set linebreak           
+set linebreak
 
 " line wrapping
-set wrap                
+set wrap
 
 " window’s title, reflecting the file currently being edited
-set title               
+set title
 
 " display a confirmation dialog when closing an unsaved file
-set confirm             
+set confirm
 
 " search down into subfolders
-set path+=**            
+set path+=**
 
 " display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5         
+set scrolloff=5
 
 " fixes common backspace problems
 set backspace=indent,eol,start 
 
 " speed up scrolling
-set ttyfast             
+set ttyfast
 
 " status bar
-set laststatus=2        
+set laststatus=2
 
 " display options
 set showmode
@@ -92,9 +92,13 @@ set pastetoggle=<F2>
 
 
 syntax enable
+set background=dark
+colorscheme material-theme
 
 map <C-o> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
+
+" for easier tab switching
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
