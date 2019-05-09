@@ -23,3 +23,6 @@
 	path = vimrc/pack/git-plugins/start/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
 
+[submodule "vimrc/pack/git-plugins/start/alchemist.vim.git"]
+	path = vimrc/pack/git-plugins/start/alchemist.vim.git
+	url = https://github.com/slashmili/alchemist.vim.git
