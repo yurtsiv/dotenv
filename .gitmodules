@@ -1,9 +1,6 @@
 [submodule "vimrc/pack/git-plugins/start/ale"]
 	path = vimrc/pack/git-plugins/start/ale
 	url = git@github.com:w0rp/ale.git
-[submodule "vimrc/pack/git-plugins/start/ayu-vim"]
-	path = vimrc/pack/git-plugins/start/ayu-vim
-	url = git@github.com:ayu-theme/ayu-vim.git
 [submodule "vimrc/pack/git-plugins/start/vim-easymotion"]
 	path = vimrc/pack/git-plugins/start/vim-easymotion
 	url = git@github.com:easymotion/vim-easymotion.git

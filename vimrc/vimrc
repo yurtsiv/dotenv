@@ -1,9 +1,6 @@
 " set compatibility to Vim only.
 set nocompatible
 
-" turn on syntax highlighting.
-syntax enable
-
 " enable true colors support
 set termguicolors
 
@@ -93,13 +90,12 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-colorscheme ayu
 
-:imap <C-k> <Esc>
+syntax enable
+
 map <C-o> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
