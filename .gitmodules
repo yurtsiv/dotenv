@@ -29,9 +29,6 @@
 [submodule "vimrc/pack/git-plugins/start/vim-mix-format.git"]
 	path = vimrc/pack/git-plugins/start/vim-mix-format.git
 	url = https://github.com/mhinz/vim-mix-format.git
-[submodule "vimrc/pack/git-plugins/start/Apprentice.git"]
-	path = vimrc/pack/git-plugins/start/Apprentice.git
-	url = https://github.com/romainl/Apprentice.git
 [submodule "vimrc/pack/git-plugins/start/material.vim.git"]
 	path = vimrc/pack/git-plugins/start/material.vim.git
 	url = https://github.com/kaicataldo/material.vim.git
