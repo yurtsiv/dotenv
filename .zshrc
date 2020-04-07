@@ -1,15 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/stepy/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
-export PATH="/home/stepy/.gem/ruby/2.6.0/bin:$PATH"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,6 +64,7 @@ export PATH="/home/stepy/.gem/ruby/2.6.0/bin:$PATH"
 plugins=(
   git
   extract
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
