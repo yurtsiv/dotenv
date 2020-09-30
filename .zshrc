@@ -102,3 +102,5 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 eval $(thefuck --alias)
+
+export FZF_BASE=/path/to/fzf/install/dir
